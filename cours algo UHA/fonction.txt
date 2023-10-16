@@ -1,0 +1,70 @@
+Variables
+
+phrase en Chaine
+espace, nbresMots en Numerique
+finPhrase en Boolean
+
+Debut
+
+    phrase <- Lire("Quel est la phrase")
+    finPhrase <- FAUX
+    nbresMots <- 0
+    dernierCarac <- Right(phrase, 1)
+
+    Si (Len(phase) > 0)
+        Repete 
+            espace <- Trouve(phrase, " ")
+
+            Si espace != 0 Alors
+
+                Si (Trouve(phrase, "?") = espace + 1 OU Trouve(phrase, "!") = espace + 1 OU Trouve(phrase, ":") = espace + 1)
+                    espace <- espace + 1
+                Sinon
+                    nbresMots <- nbresMots + 1
+                FinSi
+
+                phrase <- Right(phrase, Len(phrase) - espace + 1)
+            Sinon
+                finPhrase <- VRAI
+            FinSi
+        jusqu'a finPhrase = VRAI
+        
+        nbresMots <- nbresMots + 1
+
+        Si dernierCarac > 0 Alors
+
+
+    FinSi
+
+Fin
+
+
+---------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------
+5.7
+
+-------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+Variables
+    phrase, lettre en Chaines
+    index, nbresVoyelle en Numerique
+
+Debut
+
+    index <- 1
+    nbresVoyelle <- 0
+
+    phrase <- Lire("Merci d'indiquer une phrase")
+        
+    TantQue Len(phrase) > indice
+
+        Si Trouve("aeiouy", Mid(phrase, index, 1)) > 0
+           nbresVoyelle <- nbresVoyelle + 1 
+        FinSi
+
+        index <- index + 1
+    FinTantQue
+
+    Ecrire "Nombre de voyelle dans cette phrase est de ", nbresVoyelle
+Fin

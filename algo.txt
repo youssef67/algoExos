@@ -1,0 +1,282 @@
+Variables
+
+nombre en Numerique
+
+
+Début
+
+	nombre <- lire("Indiquez un nombre")
+
+	Si (nombre > 0)
+		Ecrire "Nombre supérieur à 0"
+	Sinon
+		Ecire "Nombre inférieur à 0"
+	FinSi
+
+Fin
+
+
+-----------------------------------------------
+
+
+Variables
+
+nombre1, nombre2 en Numerique
+
+Début
+
+	nombre1 <- lire("indiquer le 1er nombre")
+	nombre2 <- lire("indiquer le 2eme nombre")
+
+	Si (nombre1 < 0 XOU nombre2 < 0) Alors
+		Ecrire "Le produit est négatif"
+
+	SINON
+		Ecrire "Le produit est positif"
+	FinSi
+
+Fin
+
+
+------------------------------------------------
+
+Variables 
+
+nom1, nom2, nom3 en Chaines
+
+
+Début
+
+	nom1 <- "Indiquez le premier nom"
+	nom2 <- "Indiquez le deuxieme nom"
+	nom3 <- "Indiquez le troisième nom"
+
+	Si (nom1 < nom2 ET nom2 < nom3)
+		Ecrire "Les noms sont rangés par ordre alphabétique"
+	Sinon
+		Ecrire "Les noms ne sont pas rangés par ordre alphabétique"
+	FinSi
+
+Fin 
+
+
+------------------------------------------------
+
+Variables
+
+nombre en Numerique
+
+Début
+
+	nombre <- lire("Indiquez un nombre")
+
+	Si (nombre > 0)
+		Ecrire "Nombre supérieur à 0"
+	SinonSi (nombre < 0
+		Ecire "Nombre inférieur à 0"
+	Sinon
+		Ecrire "Nombre égal à zéro"
+	FinSi
+
+Fin
+
+
+------------------------------------------------
+
+Variables
+
+nombre1, nombre2 en Numerique
+
+Début
+
+	nombre1 <- lire("indiquer le 1er nombre")
+	nombre2 <- lire("indiquer le 2eme nombre")
+
+	Si (nombre1 = 0 OU nombre2 = 0)
+		Ecrire "Le produit est nul"
+	SinonSI (nombre1 < 0 XOU nombre2 < 0) Alors
+		Ecrire "Le produit est négatif"
+	Sinon
+		Ecrire "Le produit est positif"
+	FinSi
+
+Fin
+
+
+------------------------------------------------
+
+
+Variables 
+
+age en Numerique
+categorie en Chaine
+
+
+Début
+
+	age <- lire("Quel âge à l'enfant ?")
+	categorie <- "Hors catégorie"
+	
+	Si (age <= 7) Alors
+		categorie <- "Poussin"
+	SinonSi (age <= 9) Alors
+		categorie <- "Pupille" 
+	SinonSi (age <= 11)
+		categorie <- "Minime"
+	Else
+		categorie <- "Cadet"
+	FinSi
+
+	Ecrire -> "Votre enfant est un " && categorie
+
+Fin
+
+
+------------------------------------------------
+
+Variables 
+
+maVar1, maVar2 en Numerique
+maVar3 en Chaine
+
+Début
+	Si maVar1 <= maVar2 + 4 ET maVar3 != "OK" Alors
+		mavVar1 <- maVar1 - 1
+	Sinon
+		maVar1 <- maVar1 +1
+	FinSi
+Fin 
+
+
+
+------------------------------------------------
+
+
+Variables 
+
+heure, minute en Numerique
+
+
+Début 
+	minutes <- lire("indiquez les minutes")
+	heure <- lire("indiquez l'heure")
+	seconde <- lire("indiquez les secondes
+
+
+	minute <- minute + 1
+	seconde <- seconde + 1
+
+	Si (seconde = 60) Alors
+		Si (minute = 60)
+		   minute <- 0
+
+		   Si (heure = 23) Alors
+			heure <- 0
+		Sinon
+			heure <- heure + 1
+		FinSi	
+		
+		seconde <- 0
+	FinSi
+Fin
+
+
+------------------------------------------------
+
+
+Variables 
+
+tempPhotocopies en Numerique
+nombrePhotocopie en Numerique
+coutTotal en Reel
+
+
+
+Début
+
+	coutTotal <- 0
+
+	nombrePhotocopie <- lire("Indiquez le nombre de photocopie souhaitées")
+
+	Si (nombrePhotocopie > 30) Alors
+		tempPhotocopies <- nombrePhotocopie - 30
+		coutTotal <- (tempPhotocopies * 0.08) + (20 * 0.09) + (10 * 0.10)
+	SinonSi (nombrePhotocopie > 10 et nombrePhotocopie <= 20)
+		tempPhotocopies <- nombrePhotocopie - 10
+		coutTotal <- (tempPhotocopies * 0.09) + (10 * 0.10)
+	Else
+		coutTotal <- (tempPhotocopies * 0.10)
+	
+Fin
+
+------------------------------------------------
+
+Variables
+
+age en Numerique
+sexe en Chaine
+imposable en boolean
+
+
+Début 
+	
+	age <- lire("Quel est votre age")
+	sexe <- lire("Quel est votre sexe")
+	imposable <- FAUX
+
+	Si (sexe = "homme ET age > 20) Alors
+		imposable <- VRAI
+	SinonSI (sexe = "femme" ET age > 18 ET age < 35)
+		imposabe <- VRAI
+	FinSi
+
+	Si imposable
+		Ecrire "Vous ête imposable"
+	Sinon
+		Ecrire "Vous n'êtes pas imposable
+	FinSi
+Fin
+
+
+
+------------------------------------------------
+
+Variables
+
+candidat1, candidat2, candidat3, candidat4 en REEL
+
+
+Debut 
+	
+	Ecrire "Veuillez indiquer le score du 1er candidat"
+	candidat1 <- lire(30)
+	Ecrire "Veuillez indiquer le score du 2em candidat"
+	candidat2 <- lire(40)
+	Ecrire "Veuillez indiquer le score du 3em candidat"
+	candidat3 <- lire(20)
+	Ecrire "Veuillez indiquer le score du 4em candidat"
+	candidat4 <- lire(32)
+
+
+	Si (candidat1 > 50.0)
+		Ecrire "Candidat 1 est élu"
+	SinonSi (candidat2 > 50.0 OU candidat3 > 50.0 ou candidat4 > 50.0 OU candidat1 < 12.5)
+		Ecrire "Candidat1 à perdu"
+	SinonSi (candidat1 > 12,5 ET candidat1 >= candidat2 ET candidat2 >= candidat3 Et candidat3 >= candidat4)
+		Ecrire "Se trouve en ballotage favorable"
+	Sinon
+		Ecrire "Se trouve en ballotage defavorable"
+
+	
+	FinSi 
+Fin
+
+
+
+
+
+
+
+
+
+

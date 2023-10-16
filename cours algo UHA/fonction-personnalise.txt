@@ -1,0 +1,88 @@
+***********************************************************************************************
+                                        6.2
+***********************************************************************************************
+-----------------------------------------------------------------------------------------------
+                        FONCTIONS
+-----------------------------------------------------------------------------------------------
+MaFonction changerVal(val1 en chaine par reference, val2 en chaine par reference) sans retour
+    Variable
+        valTampon en chaine
+    Debut
+        valTampon <- val1
+        val1 <- val2
+        val2 <- valtampon
+    Fin
+FinFonction
+-----------------------------------------------------------------------------------------------
+                        PROGRAMME PRINCIPAL
+-----------------------------------------------------------------------------------------------
+Variable
+    val1, val2 en Chaine
+Debut
+    val1 <- "A"
+    val2 <- "B"
+
+    changerVal(val1, val2)
+Fin
+***********************************************************************************************
+                                        6.3
+***********************************************************************************************
+-----------------------------------------------------------------------------------------------
+                        FONCTIONS
+-----------------------------------------------------------------------------------------------
+MaFonction nbresVoyelle(phrase en Chaine) retour en Entier
+    Variables
+        nbresVoyelle, cmpt en Entiers
+    Debut
+        nbresVoyelle <- 0
+
+        Pour cmpt <- 1 à Len(Chaine)
+            Si (Trouve("aeiouy", Mid(phrase, cmpt, 1) > 0 ))
+                nbresVoyelle <- nbresVoyelle + 1
+            FinSi 
+        FinPour
+        Renvoyer nbresVoyelle
+    Fin
+FinFonction
+-----------------------------------------------------------------------------------------------
+                        PROGRAMME PRINCIPAL
+-----------------------------------------------------------------------------------------------
+Variable
+    nbresVoyelle en Entiers
+    phrase en Chaines
+Debut
+    phrase <- "Entrez un phrase" 
+    Ecrire "Le nombre de voyelles est de : ", nbresVoyelle(phrase)
+Fin
+
+***********************************************************************************************
+                                        6.4
+***********************************************************************************************
+-----------------------------------------------------------------------------------------------
+                        FONCTIONS
+-----------------------------------------------------------------------------------------------
+MaFonction rewrite(phrase en Chaine, IndexDebut en Entier, indexFin en entier) retour en Entier
+
+    Variables
+        longueurMotChaine en Chaine
+        longueurMotEntier en Entiers
+    Debut 
+        longueurMotChaine <- Mid(phrase, IndexDebut, indexFin)
+        longueurMotEntier <- Len(longueurMotChaine)
+
+        Renvoyer longueurMotEntier
+    Fin
+
+FinFonction
+-----------------------------------------------------------------------------------------------
+                        PROGRAMME PRINCIPAL
+-----------------------------------------------------------------------------------------------
+Variable
+    debut, fin en Entiers
+    phrase en Chaines
+Debut
+    phrase <- Lire("Entrez un phrase")
+    debut <- Lire("Entrez debut")
+    fin <- lire("Entrez fin")
+    Ecrire "Resultat : ", rewrite(phrase, debut, fin)
+Fin

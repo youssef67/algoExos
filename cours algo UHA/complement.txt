@@ -1,0 +1,118 @@
+# Exercice 4.2
+
+Variables
+    plateau[8,8] en Tableau d'Entiers
+    positionPion[][] en Tableau d'Entiers
+    positionPionMvtSuivant[1][1] en Tableau d'Entiers
+    positionLigneActuelle, positionColonneActuelle en Numérique
+    positionLigneProchaine, positionColonneProchaine en Numérique
+    positionValide en Boolean
+    Continuer en Chaine
+    cmptLigne, cmptColonne en Entier
+
+    mouvementSuivant en Entiers
+Debut
+    
+    Continuer <- "N"
+    positionValide <- FAUX
+
+    positionLigneActuelle <- Lire("Quel est la ligne (de 1 à 8)?")
+    positionColonneActuelle <- Lire("Quel est la colonne (de 1 à 8)?")
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    SAISIE DES VALEURS DE POSITION + VALIDATION DE LA POSITION
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Repeter
+        Si (positionLigneActuelle >= 1 ET positionLigneActuelle  <= 8) OU (positionColonneActuelle >= 1 ET positionColonneActuelle  <= 8) Alors
+
+            positionValide <- VRAI
+
+            Pour cmptLigne <- 0 à 7
+                Pour cmptColonne <- 0 à 7
+                    Si cmptLigne = positionLigneActuelle - 1 ET cmptColonne = positionColonneActuelle - 1
+                        plateau[cmptLigne][cmptColonne] <- 1
+                        changerTaille(positionPion[cmptLigne][cmptColonne])
+                    Sinon
+                        plateau[cmptLigne][cmptColonne] <- 0
+                    FinSI    
+                FinPour
+            FinPour
+
+            Ecrire "Super, la partie commence !"
+        Sinon
+            Ecrire "Erreur de saisie dans la position du pion, les valeurs doivent être comprises entre 1 et 8"
+            Ecrire "valeurs saisies : ligne - ",positionLigne, " colonne - ", positionColonne
+
+            Continuer <- Lire("Voulez refaire une saisie O/N")
+
+            Si continuer = "O" Alors
+                positionLigneActuelle <- Lire("Quel est la ligne ?")
+                positionColonneActuelle <- Lire("Quel est la colonne ?")
+            FinSi
+        FinSi
+
+    jusqu'a continuer = "N" OU positionValide = VRAI
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    SAISIE DES MOUVEMENTS PAR L'UTILISATEUR
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+    Repeter 
+        Ecrire "Quel mouvement souhaitez vous effectuer ?"
+        mouvementSuivant <-Lire("
+                                - Pour aller en haut à gauche, taper 0"
+                                - Pour aller en haut à droite, taper 1"
+                                - Pour aller en bas à gauche, taper 2"
+                                - Pour aller en bas à droite, taper 3")
+
+
+        Si mouvementSuivant = à 0 Alors
+            positionPionMvtSuivant[0][0] <- 1
+            positionPionMvtSuivant[1][0] <- -1
+        SinonSi mouvementSuivant = à 1 Alors
+            positionPionMvtSuivant[0][0] <- 1
+            positionPionMvtSuivant[1][0] <- 1
+        SinonSi mouvementSuivant = à 2 Alors
+            positionPionMvtSuivant[0][0] <- -1
+            positionPionMvtSuivant[1][0] <- -1
+        Sinon mouvementSuivant = à 3 Alors
+            positionPionMvtSuivant[0][0] <- -1
+            positionPionMvtSuivant[1][0] <- 1
+        FinSi
+
+        positionLigneProchaine <- positionLigneActuelle + positionPionMvtSuivant[0][0]
+        positionColonneProchaine <- positionColonneActuelle + positionPionMvtSuivant[1][0]
+s 1 ET positionLigneProchaine <= 8) OU (positionColonneProchaine >= 1 ET positionColonneProchaine <= 8) Alors
+            Pour cmptLigne <- 0 à 7
+                Pour cmptColonne <- 0 à 7
+                    Si cmptLigne = positionLigneProchaine - 1 ET cmptColonne = positionColonneProchaine - 1
+                        plateau[cmptLigne][cmptColonne] <- 1
+                        changerTaille(positionPion[cmptLigne][cmptColonne])
+                    Sinon
+                        plateau[cmptLigne][cmptColonne] <- 0
+                    FinSI    
+                FinPour
+            FinPour
+        Sinon
+            Ecrire "Erreur de saisie du prochain mouvement"
+
+            Continuer <- Lire("Voulez refaire une saisie O/N")
+
+            Si continuer = "O" Alors
+                Ecrire "Quel mouvement souhaitez vous effectuer ?"
+                mouvementSuivant <-Lire("
+                                - Pour aller en haut à gauche, taper 0"
+                                - Pour aller en haut à droite, taper 1"
+                                - Pour aller en bas à gauche, taper 2"
+                                - Pour aller en bas à droite, taper 3")
+            FinSi
+        FinSi
+  
+    jusqu'a continuer = "N" OU positionValide = VRAI
+
+    Ecrire "Bye Bye !!!"
